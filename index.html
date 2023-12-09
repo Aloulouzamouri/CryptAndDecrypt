@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptage / Décryptage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="header">
+        <div id="project-info">
+            <div id="project-title">Projet TP Sécurité des systèmes informatiques</div>
+        </div>
+        <div id="name-bar">Alaa Eddine Zamouri</div>
+    </div>
+
+    <div id="container">
+        <h2>Cryptage / Décryptage</h2>
+        <label for="text">Texte :</label>
+        <input type="text" id="text" placeholder="Entrez le texte">
+
+        <label for="key">Clé de chiffrement :</label>
+        <input type="text" id="key" placeholder="Entrez la clé de chiffrement">
+
+        <label for="method">Méthode :</label>
+        <select id="method" onchange="updateKeyInputs()">
+            <option value="cesar">César</option>
+            <option value="vigenere">Vigenère</option>
+            <option value="affine">Code Affine</option>
+        </select>
+
+        <div id="key-a-container">
+            <label for="key-a">Clé 'a' :</label>
+            <input type="number" id="key-a" placeholder="Entrez la valeur de 'a'">
+        </div>
+
+        <div id="key-b-container">
+            <label for="key-b">Clé 'b' :</label>
+            <input type="number" id="key-b" placeholder="Entrez la valeur de 'b'">
+        </div>
+
+        <button onclick="encrypt()">Chiffrer</button>
+        <button onclick="decrypt()">Déchiffrer</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
